@@ -1,0 +1,31 @@
+<div class="datas-container"> 
+    
+    <div *ngIf="recommendedVenues === undefined && !loading" class="information-no-data">
+        Search a location to display recommended places.
+        <br>
+        <span class="tips"> tips : Scroll to the bottom of the list to load more. </span>
+    </div>
+
+    <div *ngIf="recommendedVenues !== undefined">
+        <div *ngFor="let venue of recommendedVenues" class="data-container" (click)="pickRecommendation(venue.referralId);">
+            <div class="photo" style="float: left; width: 100px; height: 100px;">
+                <img class="picture-data" src="{{getPicture(venue)}}" alt="">
+            </div>
+            <div class="container-information">
+                <div> {{ venue.venue.name }}</div>
+                <div> Rating : {{ getRating(venue.venue.rating) }} - {{ venue.venue.categories[0].name }} </div>
+                <div *ngIf="venue.venue.url"> <a href="{{venue.venue.url}}"> {{venue.venue.url}} </a>  </div>
+            </div>
+        </div>
+
+        <div *ngIf="loading"  class="loading">
+            <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+        </div>
+        
+         <div *ngIf="showLoadMoreBtn && !loading" class="btn-load-more" (click)="loadMore();">
+            Load More 
+        </div>
+    </div>
+</div>
