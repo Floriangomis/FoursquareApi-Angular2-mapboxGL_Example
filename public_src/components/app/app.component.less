@@ -3,8 +3,50 @@ body {
     padding:0;
 }
 
-#map {
+
+
+.container-map {
+    display: inline;
+
+    #map {
+        display: inline-block;
+
+        height: 100vh;
+        width:72%;
+    }
+}
+
+.container-list {
+    overflow: scroll;
     display: inline-block;
+
+    background-color: #fefefe;
+    
     height: 100vh;
-    width:76%;
+    width: 26%;
+}
+
+
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (max-width : 1224px) {
+    .container-map {
+        display: inline;
+        #map {
+            display: inline-block;
+            height: 60vh;
+            width:100vw;
+        }
+    }
+
+    .container-list {
+        height: 40vh;
+        width: 100vw;
+    }
+}
+
+@media only screen
+and (min-width : 1224px) {
+    
 }

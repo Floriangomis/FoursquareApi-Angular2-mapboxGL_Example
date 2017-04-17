@@ -17,13 +17,11 @@
                 <div *ngIf="venue.venue.url"> <a href="{{venue.venue.url}}"> {{venue.venue.url}} </a>  </div>
             </div>
         </div>
-
         <div *ngIf="loading"  class="loading">
             <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
         </div>
-        
          <div *ngIf="showLoadMoreBtn && !loading" class="btn-load-more" (click)="loadMore();">
             Load More 
         </div>

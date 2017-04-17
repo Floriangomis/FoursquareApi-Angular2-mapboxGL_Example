@@ -45,7 +45,6 @@ export class SidebarComponent {
     }
 
     retrieveLocationById(referralId: any) {
-        console.log(referralId);
         return this.lookup[referralId];
     }
 
@@ -55,7 +54,7 @@ export class SidebarComponent {
             this.popup.remove();
         }
 
-        this.mapService.map.setZoom(18);
+        this.mapService.map.setZoom(15);
         this.mapService.map.panTo( {lng: locationData.venue.location.lng, lat: locationData.venue.location.lat } as any );
 
         this.popup = new Popup({closeButton: true, closeOnClick: false})
