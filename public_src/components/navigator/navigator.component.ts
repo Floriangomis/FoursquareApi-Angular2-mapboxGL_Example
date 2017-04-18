@@ -37,11 +37,10 @@ export class NavigatorComponent {
                 this.address = location.address;
 
                 this.foursquareService.retrieveRecommendedVenus(this.lnlt).subscribe( value => {
-                    this.foursquareService.emitRecommendedLocation(value);
+                    // We don't need to do anything here since the service sent informations directly to the sidebar component;
                 }, error => {
                     console.log(error);
                 });
-
             }, error => {
                 console.error(error);
         });

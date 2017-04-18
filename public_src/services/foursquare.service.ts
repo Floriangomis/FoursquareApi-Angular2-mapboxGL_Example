@@ -36,6 +36,7 @@ export class FoursquareService {
 
         return this.http.get(`https://api.foursquare.com/v2/venues/explore?ll=${this.ltLng[0]},${this.ltLng[1]}&&client_id=LLUXQC5VMIZOEQGCVGUG43LULN1EXZN0B2DZYEF2ICRHMXAJ&client_secret=XRKMWKLSVJ1PB0A1HZAV0GJZG534B4A3YTFISK231MDUEBRI&v=20170415&limit=${this.limit}&offset=${this.offset}&venuePhotos=1`)
             .map(res => {
+                this.emitRecommendedLocation(res.json());
                 // Update of the offset
                 this.offset = this.offset + this.limit;
                 return res.json();
