@@ -9,7 +9,7 @@ I Initially forked this project in order to fastly setup Mapbox GL and Angular p
 
 In order to launch this project you have to be sure to have Nodejs(and Npm/Yarn) installed on you machine.
 
-# Setup 
+# Setup
 
 In the terminal go into the project folder :
 

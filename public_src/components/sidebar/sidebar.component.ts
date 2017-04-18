@@ -35,7 +35,7 @@ export class SidebarComponent {
             console.log(error);
             this.loading = false;
         }, () => {
-            console.log('completed');
+            console.log('Completed');
         });
     }
 
